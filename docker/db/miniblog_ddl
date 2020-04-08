@@ -1,0 +1,22 @@
+CREATE TABLE user(
+  id int PRIMARY KEY AUTO_INCREMENT,
+  user_name varchar(20) NOT NULL,
+  password varchar(40) NOT NULL,
+  created_at datetime,
+  UNIQUE KEY user_name_index(user_name)
+) ENGINE = INNODB;
+
+CREATE TABLE following(
+  user_id int,
+  following_id int,
+  PRIMARY KEY (user_id, following_id)
+) ENGINE = INNODB;
+
+CREATE TABLE status(
+  id int AUTO_INCREMENT,
+  user_id int not null,
+  body varchar(255),
+  created_at datetime,
+  PRIMARY KEY(id),
+  INDEX user_id_index(user_id)
+) ENGINE = INNODB;

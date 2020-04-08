@@ -22,5 +22,6 @@ services:
     image: mysql:5.7
     volumes:
       - ./docker/db/data:/var/lib.mysql
+      - ./docker/db/my.cnf:/etc/mysql/my.cnf
     environment:
       - MYSQL_ROOT_PASSWORD=password
