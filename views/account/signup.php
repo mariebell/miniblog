@@ -5,6 +5,14 @@
 <form action="<?= $base_url ?>/account/register" method ="post">
   <input type="hidden" name="_token" value="<?= $this->escape($_token); ?>">
 
+  <?php if (isset($errors) && count($errors) > 0){ ?>
+  <ul class="error_list">
+    <?php foreach ($errors as $error) { ?>
+      <li><?= $this->escape($error); ?></li>
+    <?php } ?>
+  </ul>
+  <?php } ?>
+
   <table>
   <tbody>
     <tr>

@@ -17,7 +17,7 @@ class UserRepository extends DbRepository
     ]);
   }
 
-  public function hashPassowrd($password)
+  public function hashPassword($password)
   {
     return sha1($password . 'MfbrG23n_Xro2');
   }
